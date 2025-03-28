@@ -10,12 +10,19 @@
 <body>
     <header>
         <div class="header-container">
-            <img class="logo"></img>
+            <img src="" alt="" class="logo">
             <p>ĂN VẶT 24H</p>
             <input type="text" class="search-bar" placeholder="Nhập tên sản phẩm">
             <button class="cart"></button>
         </div>
         <nav>
+            <div class="nav-container">
+                <a class="nav-item upper" href="#">Trang chủ</a>
+                <a class="nav-item upper" href="#all-product">Tất cả sản phẩm</a>
+                <a class="nav-item upper" href="#new-product">Sản phẩm mới</a>
+                <a class="nav-item upper" href="#best-sellers">Bán chạy</a>
+                <a class="nav-item upper" href="#cart">Giỏ hàng</a>
+            </div>
         </nav>
     </header>
 
@@ -34,17 +41,22 @@
 
     <div class="section">
         <div class="section-content-container">
-            <div class="section-title">Khuyến mãi</div>
-            <div class="product-list">
-                <div class="product"></div>
-                <div class="product"></div>
-                <div class="product"></div>
-                <div class="product"></div>
-            </div>
+            <div class="section-title upper">Best seller</div>
+            <div class="product-list"></div>
         </div>
         <div class="section-btn-container">
-            <button></button>
-            <button></button>
+            <button class="prev-btn"></button>
+            <button class="next-btn"></button>
+        </div>
+    </div>
+    <div class="section">
+        <div class="section-content-container">
+            <div class="section-title">Khuyến mãi</div>
+            <div class="product-list"></div>
+        </div>
+        <div class="section-btn-container">
+            <button class="prev-btn"></button>
+            <button class="next-btn"></button>
         </div>
     </div>
     <div class="section">
@@ -53,8 +65,8 @@
             <div class="product-list"></div>
         </div>
         <div class="section-btn-container">
-            <button></button>
-            <button></button>
+            <button class="prev-btn"></button>
+            <button class="next-btn"></button>
         </div>
     </div>
     <div class="section">
@@ -63,14 +75,34 @@
             <div class="product-list"></div>
         </div>
         <div class="section-btn-container">
-            <button></button>
-            <button></button>
+            <button class="prev-btn"></button>
+            <button class="next-btn"></button>
         </div>
     </div>
 
-    <footer></footer>
+    <footer>
+        <div class="info">
+            <img src="" alt="" class="logo">Tên shop
+            <ul>
+                <li>Địa chỉ học viện</li>
+                <li>Môn học</li>
+            </ul>
+        </div>
+        <div class="quick-access">
+            
+        </div>
+        <div class="mssvs">
+            <p>Thành viên nhóm:</p>
+            <ul>
+                <li>Nguyễn Ngọc Quế Chi</li>
+                <li>Nguyễn Văn Đăng Quang</li>
+                <li>Lê Đình Thi</li>
+            </ul>
+        </div>
+    </footer>
 
     
-    <script src="./scripts/index.js"></script>
+    <script src="./scripts/slider.js"></script>
+    <script src="./scripts/product.js"></script>
 </body>
 </html>
