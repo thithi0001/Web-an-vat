@@ -19,4 +19,4 @@ function changeSlide(direction) {
 }
 
 // Tự động chuyển slide mỗi 3 giây
-// setInterval(() => changeSlide(1), 6000);
+setInterval(() => changeSlide(1), 6000);

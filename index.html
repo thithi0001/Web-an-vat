@@ -10,10 +10,10 @@
 <body>
     <header>
         <div class="header-container">
-            <img src="" alt="" class="logo">
+            <img src="" alt="logo" class="logo">
             <p>ĂN VẶT 24H</p>
             <input type="text" class="search-bar" placeholder="Nhập tên sản phẩm">
-            <button class="cart"></button>
+            <button class="cart-btn"></button>
         </div>
         <nav>
             <div class="nav-container">
@@ -25,6 +25,74 @@
             </div>
         </nav>
     </header>
+
+    <div class="overlay"></div>
+    <div class="cart-side-section">
+        <button class="close-cart-btn"></button>
+        <div class="cart-section-title">
+            <i class="icon-cart"></i>
+            <p>Sản phẩm</p>
+        </div>
+        <div class="cart-list">
+            <div class="cart-item">
+                <div class="item-quantity">
+                    <button class="plus-btn">+</button>
+                    <p class="quantity">1</p>
+                    <button class="minus-btn">-</button>
+                </div>
+                <img src="" alt="">
+                <div class="cart-item-info">
+                    <p class="item-name">Bánh tráng phơi sương</p>
+                    <div class="calculate">
+                        <span class="unit-price">10.000đ</span>
+                         x 
+                        <span class="quantity">1</span>
+                    </div>
+                    <p class="total-price">10.000đ</p>
+                </div>
+                <button class="remove-btn"></button>
+            </div>
+            <div class="cart-item">
+                <div class="item-quantity">
+                    <button class="plus-btn">+</button>
+                    <p class="quantity">2</p>
+                    <button class="minus-btn">-</button>
+                </div>
+                <img src="" alt="">
+                <div class="cart-item-info">
+                    <p class="item-name">Bánh tráng phơi sương</p>
+                    <div class="calculate">
+                        <span class="unit-price">10.000đ</span>
+                         x 
+                        <span class="quantity">2</span>
+                    </div>
+                    <p class="total-price">20.000đ</p>
+                </div>
+                <button class="remove-btn"></button>
+            </div>
+            <div class="cart-item">
+                <div class="item-quantity">
+                    <button class="plus-btn">+</button>
+                    <p class="quantity">3</p>
+                    <button class="minus-btn">-</button>
+                </div>
+                <img src="" alt="">
+                <div class="cart-item-info">
+                    <p class="item-name">Bánh tráng phơi sương</p>
+                    <div class="calculate">
+                        <span class="unit-price">10.000đ</span>
+                         x 
+                        <span class="quantity">3</span>
+                    </div>
+                    <p class="total-price">30.000đ</p>
+                </div>
+                <button class="remove-btn"></button>
+            </div>
+        </div>
+        <div class="cart-link">
+            <a href="">Xem giỏ hàng</a>
+        </div>
+    </div>
 
     <div class="slider">
         <div class="slide-container">
@@ -81,28 +149,41 @@
     </div>
 
     <footer>
-        <div class="info">
-            <img src="" alt="" class="logo">Tên shop
+        <div class="footer-column">
+            <div class="footer-column-title">
+                <img src="" alt="logo" class="logo">
+                <p>Tên shop</p>
+            </div>
             <ul>
-                <li>Địa chỉ học viện</li>
-                <li>Môn học</li>
+                <li>Địa chỉ: 97 Man Thiện, Phường Hiệp Phú, Thủ Đức, TP. Hồ Chí Minh</li>
+                <li>Môn học: Lập trình Web</li>
+                <li>GVHD: ThS. Nguyễn Văn Hữu Hoàng</li>
             </ul>
         </div>
-        <div class="quick-access">
-            
-        </div>
-        <div class="mssvs">
-            <p>Thành viên nhóm:</p>
+        <div class="footer-column">
+            <div class="footer-column-title">
+                <p>Thành viên nhóm</p>
+            </div>
             <ul>
                 <li>Nguyễn Ngọc Quế Chi</li>
                 <li>Nguyễn Văn Đăng Quang</li>
                 <li>Lê Đình Thi</li>
             </ul>
         </div>
+        <div class="footer-column">
+            <div class="footer-column-title">
+                <p>Mã số sinh viên</p>
+            </div>
+            <ul>
+                <li>N22DCCN108</li>
+                <li>N22DCCN162</li>
+                <li>N22DCCN179</li>
+            </ul>
+        </div>
     </footer>
 
-    
     <script src="./scripts/slider.js"></script>
     <script src="./scripts/product.js"></script>
+    <script src="./scripts/toggle_cart_section.js"></script>
 </body>
 </html>

@@ -75,5 +75,5 @@ document.querySelectorAll('.section').forEach((section, index) => {
 
     // Gọi hàm để tạo sản phẩm
     createProducts(productCounts[index]); // Thay đổi số lượng sản phẩm ở đây
-    console.log("product count = ", productCounts[index]);
+    // console.log("product count = ", productCounts[index]);
 });
