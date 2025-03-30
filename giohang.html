@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div>
+            <i class="material-icons home-icon" >home</i>
+            
+        </div>
+        <h1>Giỏ Hàng</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th class="text-center">
+                        <label for="selectAll">Chọn</label><br>
+                        <input type="checkbox" id="selectAll" onclick="selectAll(this)">
+                    </th>
+                    <th>Hình ảnh sản phẩm</th>
+                    <th>Sản Phẩm</th>
+                    <th>Giá</th>
+                    <th>Số Lượng</th>
+                    <th>Tổng</th>
+                    <th>Thao Tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-center"><input type="checkbox" class="item-checkbox"></td>
+                        <div class="checkbox"></div></td>
+                    <td><img src="../img/banh-trang-phoi-suong.png" alt="Hình ảnh sản phẩm" width="50"></td>
+                    <td>Bánh tráng phơi sương 1</td>
+                    <td>120.000 VNĐ</td>
+                    <td>
+                        <input type="number" value="1" min="1">
+                    </td>
+                    <td>120.000 VNĐ</td>
+                    <td><button>Xóa</button></td>
+                </tr>
+                <tr>
+                    <td class="text-center"><input type="checkbox" class="item-checkbox"></td>
+                        <div class="checkbox"></div></td>
+                    <td><img src="../img/banh-trang-phoi-suong.png" alt="Hình ảnh sản phẩm" width="50"></td>
+                    <td>Bánh tráng phơi sương 2</td>
+                    <td>120.000 VNĐ</td>
+                    <td>
+                        <input type="number" value="1" min="1">
+                    </td>
+                    <td>120.000 VNĐ</td>
+                    <td><button>Xóa</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <i class="material-icons small-icon">card_giftcard</i>
+            <label for="voucher">Thêm mã khuyến mãi</label>
+        </div>
+        <table>
+            <tbody>
+                <tr>
+                    <td>Tổng Giá</td>
+                    <td class="text-right">220.000 VNĐ</td>
+                </tr>
+                <tr>
+                    <td>Phí vận chuyển</td>
+                    <td class="text-right">10.000 VNĐ</td>
+                </tr>
+                <tr>
+                    <td>voucher giảm giá</td>
+                    <td class="text-right">30.000 VNĐ</td>
+                </tr>
+                <tr>
+                    <td>Tổng tiền thanh toán</td>
+                    <td class="text-right">200.000 VNĐ</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="total">
+            <button class="checkout">Thanh Toán</button>
+        </div>
+        <div>Có thể bạn cũng muốn</div>
+        <div class="product-grid">
+            <!-- Sản phẩm 1 -->
+            <div class="product-item">
+              <img src="../img/banh-trang-phoi-suong.png" alt="Sản phẩm 1">
+              <div class="product-info">
+                <div class="product-title">Bánh tráng phơi sương 3</div>
+                <div class="product-price">229.080₫</div>
+              </div>
+            </div>
+        
+            <!-- Sản phẩm 2 -->
+            <div class="product-item">
+              <img src="../img/banh-trang-phoi-suong.png" alt="Sản phẩm 2">
+              <div class="product-info">
+                <div class="product-title">Bánh tráng phơi sương 4</div>
+                <div class="product-price">48.000₫</div>
+              </div>
+            </div>
+        
+            <!-- Sản phẩm 3 -->
+            <div class="product-item">
+              <img src="../img/banh-trang-phoi-suong.png" alt="Sản phẩm 3">
+              <div class="product-info">
+                <div class="product-title">Bánh tráng phơi sương 5</div>
+                <div class="product-price">28.500₫</div>
+              </div>
+            </div>
+        
+            <!-- Sản phẩm 4 -->
+            <div class="product-item">
+              <img src="../img/banh-trang-phoi-suong.png" alt="Sản phẩm 4">
+              <div class="product-info">
+                <div class="product-title">Bánh tráng phơi sương 6</div>
+                <div class="product-price">94.990₫</div>
+              </div>
+            </div>
+
+            <!-- Sản phẩm 5 -->
+            <div class="product-item">
+                <img src="../img/banh-trang-phoi-suong.png" alt="Sản phẩm 2">
+                <div class="product-info">
+                  <div class="product-title">Bánh tráng phơi sương 7</div>
+                  <div class="product-price">48.000₫</div>
+                </div>
+              </div>
+
+            <!-- Sản phẩm 6 -->
+            <div class="product-item">
+                <img src="../img/banh-trang-phoi-suong.png" alt="Sản phẩm 2">
+                <div class="product-info">
+                  <div class="product-title">Bánh tráng phơi sương 8</div>
+                  <div class="product-price">48.000₫</div>
+                </div>
+              </div>
+    </div>
+    <script>
+        function toggleCheckbox(element) {
+          const checkbox = element.querySelector('.checkbox');
+          checkbox.classList.toggle('checked');
+        }
+        function selectAll(selectAllCheckbox) {
+            const checkboxes = document.querySelectorAll('.item-checkbox');
+            checkboxes.forEach((checkbox) => {
+                checkbox.checked = selectAllCheckbox.checked;
+            });
+        }
+      </script>
+</body>
+</html>
