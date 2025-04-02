@@ -15,25 +15,25 @@ document.querySelectorAll('.section').forEach((section, index) => {
             products.push({
                 name: `Bánh tráng phơi sương ${i}`,
                 // name: `Bánh tráng phơi sương`,
-                price: '10.000đ',
+                price: '10.000',
             });
         }
         renderProducts();
     }
 
     function renderProducts() {
-        productList.innerHTML = ''; // Xóa nội dung hiện tại
+        productList.innerHTML = '';
         products.forEach((product) => {
             const productDiv = document.createElement('div');
             productDiv.classList.add('product');
             productDiv.innerHTML = `
                 <div class="product-img">
-                <img class="hover-scale" alt=""></img>
+                <a href="productinfo.html"><img class="hover-scale" alt=""></img></a>
                 </div>
                 <div class="product-info">
                     <p class="name">${product.name}</p>
-                    <p class="price">${product.price}</p>
-                    <button class="btn-hover-black-transparent">
+                    <p class="price">${product.price} VNĐ</p>
+                    <button class="btn-hover-black-transparent add-to-cart">
                         <i class="ti-shopping-cart"></i>
                     </button>
                 </div>
@@ -45,7 +45,6 @@ document.querySelectorAll('.section').forEach((section, index) => {
     }
 
     function updateProductDisplay() {
-        const offset = headIndex * (100 / k); // Tính toán offset để chuyển đổi
         for (let i = 0; i < products.length; i++) {
             const productDiv = productList.children[i];
             if (headIndex <= i && i <= tailIndex) {
@@ -54,6 +53,7 @@ document.querySelectorAll('.section').forEach((section, index) => {
                 productDiv.classList.add('hid');
             }
         }
+        // const offset = headIndex * (100 / k); // Tính toán offset để chuyển đổi
         // productList.style.transform = `translateX(-${offset}%)`;
     }
 
@@ -77,7 +77,5 @@ document.querySelectorAll('.section').forEach((section, index) => {
         updateProductDisplay();
     });
 
-    // Gọi hàm để tạo sản phẩm
-    createProducts(productCounts[index]); // Thay đổi số lượng sản phẩm ở đây
-    // console.log("product count = ", productCounts[index]);
+    createProducts(productCounts[index]);
 });
