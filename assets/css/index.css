@@ -4,6 +4,39 @@
     box-sizing: border-box;
 }
 
+:root {
+    /* bgc = background-color */
+    --header-bgc: #FF0D0D;
+    --nav-bar-bgc: #FF6363;
+    --nav-item-hover-bgc: #C83838;
+    --nav-item-focus-bgc: #CA0000;
+    --section-bgc: #FFB3B3;
+    --body-bgc: #FFDEDE;
+    --footer-bgc: #E13C3C;
+    --slider-bgc: #FFB3B3;
+    --section-content-container-bgc: #FFB3B3;
+    --product-bgc: #FE3E3E;
+    --logo-bgc: yellow;
+    --slider-btn-bgc: rgb(255, 0, 150);
+    --section-btn-bgc: rgba(255, 0, 150, 0.5);
+    --search-bar-focus-bgc: blueviolet;
+    --invisible-black: rgba(0, 0, 0, 0);
+    --hover-btn: rgba(0, 0, 0, 0.1);
+}
+
+.hover-scale:hover {
+    scale: 1.1;
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+}
+
+.btn-hover-black-transparent {
+    background-color: var(--invisible-black);
+}
+
+.btn-hover-black-transparent:hover {
+    background-color: var(--hover-btn);
+}
+
 .upper {text-transform: uppercase;}
 .no-decor-text {text-decoration: none;}
 .haft {width: 50%;}
@@ -21,6 +54,9 @@ p {
 button {
     border: none;
     border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    user-select: none;
 }
 html {
     font-family: Verdana, sans-serif;
@@ -29,12 +65,13 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    background-color: white;    
     height: auto;
     line-height: 1.5;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
+    /* scrollbar-gutter: ; */
+    background-color: var(--body-bgc);
 }
 
 #header {}
@@ -44,7 +81,8 @@ header {
     left: 0;
     right: 0;
     z-index: 10;
-    background-color: green;
+    background-color: var(--header-bgc);
+    padding-top: 10px;
 }
 
 .header-container {
@@ -60,7 +98,9 @@ header {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: yellow;
+    background-color: var(--logo-bgc);
+    user-select: none;
+    content: url(../img/logo.png);
 }
 
 .header-container p {
@@ -73,16 +113,22 @@ header {
     width: 450px;
     height:  30px;
     line-height: 24px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    user-select: none;
 }
 
-.search-bar::placeholder {
-    padding-left: 10px;
+.search-bar:focus {
+    /* Đổi màu */
+    outline: 2px solid var(--search-bar-focus-bgc);
 }
 
 .cart-btn {
     width: 50px;
     height: 50px;
-    background-color: yellow;
+    font-size: 30px;
+    /* background-color: white; */
+    color: white;
 }
 
 nav {
@@ -91,8 +137,8 @@ nav {
     justify-content: space-between;
     align-items: center;
     height: fit-content;
-    background-color: black;
     width: 100%;
+    background-color: var(--nav-bar-bgc);
 }
 
 .nav-container {
@@ -109,16 +155,21 @@ nav {
 
 .nav-item {
     font-size: 15px;
+    font-weight: bold;
     display: inline-block;
     text-align: center;
     padding: 12px 24px;
     color: white;
-    background-color: black;
+    /* background-color: black; */
 }
 
 .nav-item:hover {
-    background-color: #ccc;
-    color: black;
+    background-color: var(--nav-item-hover-bgc);
+}
+
+.nav-item:focus {
+    /* color: ; */
+    background-color: var(--nav-item-focus-bgc);
 }
 
 .overlay {
@@ -127,9 +178,9 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
     display: none;
     z-index: 20;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 #cart-section {}
@@ -139,8 +190,6 @@ nav {
     right: 0;
     width: 700px;
     height: 100vh;
-    background-color: white;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
     z-index: 30;
     transform: translateX(100%);
     transition: transform 0.1s ease-in-out;
@@ -149,6 +198,8 @@ nav {
     gap: 20px;
     align-items: center;
     overflow: hidden;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    background-color: white;
 }
 
 .cart-section-title {
@@ -163,10 +214,16 @@ nav {
     font-size: 18px;
 }
 
-.icon-cart {
-    width: 36px;
-    height: 36px;
-    background-color: blue;
+.cart-section-title .icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-size: 26px;
+    border-radius: 50%;
+    /* color: rgb(255, 216, 216); */
+    /* background-color: rgb(255, 75, 75); */
 }
 
 .close-cart-btn {
@@ -175,7 +232,8 @@ nav {
     right: 40px;
     width: 36px;
     height: 36px;
-    background-color: red;
+    line-height: 36px;
+    font-size: 24px;
 }
 
 .cart-list {
@@ -193,13 +251,14 @@ nav {
 .cart-item {
     width: 100%;
     height: 100px;
-    background-color: beige;
     display: grid;
-    grid-template-areas: 'quantity image info info info remove-btn';
-    /* justify-content: space-between; */
+    grid-template-areas: 'quantity image info remove-btn';
+    grid-template-columns: .3fr .5fr 2.5fr .3fr;
+    grid-template-rows: repeat(1, 1fr);
     align-items: center;
     padding: 0 20px;
     box-sizing: border-box;
+    background-color: beige;
 }
 
 .cart-item .item-quantity {
@@ -223,9 +282,10 @@ nav {
 
 .cart-item img {
     grid-area: image;
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
+    content: url(../img/banh-trang-phoi-suong.png);
     background-color: blue;
 }
 
@@ -238,9 +298,9 @@ nav {
     justify-self: end;
     width: 30px;
     height: 30px;
-    background-color: red;
+    line-height: 30px;
+    font-size: 20px;
 }
-
 
 .cart-link {
     position: sticky;
@@ -259,7 +319,7 @@ nav {
     text-align: center;
     border-radius: 20px;
     color: white;
-    background-color: green;
+    background-color: var(--nav-bar-bgc);
 }
 
 .cart-link a:hover {
@@ -273,6 +333,7 @@ nav {
     height: 90%;
     margin: 96px auto;
     overflow: hidden;
+    background-color: var(--slider-bgc);
 }
 
 .slide-container {
@@ -282,15 +343,25 @@ nav {
     height: 100%;
     align-items: center;
     transition: transform 1.2s ease-in-out; /* Animation cho chuyển động */
+    padding: 30px 0;
+    box-sizing: border-box;
 }
 
 .slide {
     position: relative;
-    min-width: calc(100% - 40px);
-    height: 800px; /* Tính giá trị sau */
+    min-width: calc(100% - 2 * 20px);
+    height: 590px;
     margin: 0 20px;
-    background: url(../img/slide-1.png) no-repeat ;
-    background-size: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.slide1 {
+    background-image: url(../img/slide-1.png);
+}
+
+.slide2 {
+    background-image: url(../img/slide-2.png);
 }
 
 .slide-btn-container {
@@ -298,20 +369,21 @@ nav {
     top: calc(0.4 * 800px);
     width: 100%;
     display: flex;
+    padding: 0 16px;
     justify-content: space-between;
 }
 
 .slide-btn-container button {
-    width: 50px;
-    height: 50px;
-    background-color: blue;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    background-color: var(--slider-btn-bgc);
 }
 
 #section {}
 .section {
     height: 380px;
     width: 100%;
-    background-color: yellow;
     margin-top: 40px;
     display: flex;
     justify-content: center;
@@ -322,12 +394,12 @@ nav {
     width: 70%;
     height: 80%;
     margin: 0 auto;
-    background-color: red;
     border-radius: 30px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    background-color: var(--section-content-container-bgc);
 }
 
 .section-title {
@@ -342,51 +414,6 @@ nav {
     /* border: 1px solid black; */
 }
 
-#product {}
-.product-list {
-    position: relative;
-    display: flex;
-    margin-top: 10px;
-    /* width: 86%; */
-    height: 70%;
-    padding: 0 20px;
-    transition: transform 0.6s ease-in-out;
-    column-count: 4;
-    column-gap: 30px;
-    /* border: 1px solid black; */
-}
-
-.product {
-    width: 170px;
-    min-width: 20%;
-    background-color: rgb(0, 255, 110);
-    border-radius: 10px;
-    overflow: hidden;
-    outline: 5px solid white;
-    /* transition: transform 0.6s ease-in-out; */
-}
-
-.product .product-img {
-    position: relative;
-    width: 100%;
-    height: 60%;
-    margin: 0 auto;
-    background: url(../img/banh-trang-phoi-suong.png) no-repeat;
-}
-
-.product .name {
-    font-size: 16px;
-    text-align: center;
-}
-
-.product .price {
-    font-size: 16px;
-    color: white;
-    text-align: left;
-    text-indent: 10px;
-    margin-top: 5px;
-}
-
 .section-btn-container {
     position: absolute;
     display: flex;
@@ -397,7 +424,85 @@ nav {
 .section-btn-container button {
     width: 40px;
     height: 40px;
-    background-color: blue;
+    font-size: 20px;
+    transition: 0.2s;
+    background-color: var(--section-btn-bgc);
+}
+
+#product {}
+.product-list {
+    position: relative;
+    display: flex;
+    margin-top: 10px;
+    /* width: 86%; */
+    height: 70%;
+    padding: 0 10px;
+    transition: transform 0.6s ease-in-out;
+    column-count: 4;
+    column-gap: 30px;
+    /* border: 1px solid black; */
+}
+
+.product {
+    width: 170px;
+    min-width: 20%;
+    border-radius: 10px;
+    overflow: hidden;
+    outline: 5px solid white;
+    transition: 0.3s;
+    background-color: var(--product-bgc);
+}
+
+.product:hover {
+    /* transform: translateY(-20px); */
+    transition: 0.3s ease-out;
+}
+
+.product img {
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+    content: url(../img/banh-trang-phoi-suong.png);
+}
+
+.product .product-img {
+    position: relative;
+    width: 100%;
+    height: 60%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.product-info {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "name name name"
+        "price price icon";
+}
+
+.product-info .name {
+    grid-area: name;
+    font-size: 16px;
+    text-align: center;
+}
+
+.product-info .price {
+    grid-area: price;
+    font-size: 16px;
+    line-height: 36px;
+    color: white;
+    text-align: left;
+    text-indent: 10px;
+}
+
+.product-info button {
+    grid-area: icon;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    /* padding-bottom: 10px; */
 }
 
 #footer {}
@@ -407,8 +512,8 @@ footer {
     align-items: center;
     width: 100%;
     height: 300px;
-    background-color: black;
     margin-top: 40px;
+    background-color: var(--footer-bgc);
 }
 
 .footer-column {

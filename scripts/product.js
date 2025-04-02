@@ -27,10 +27,15 @@ document.querySelectorAll('.section').forEach((section, index) => {
             const productDiv = document.createElement('div');
             productDiv.classList.add('product');
             productDiv.innerHTML = `
-                <div class="product-img"></div>
+                <div class="product-img">
+                <img class="hover-scale" alt=""></img>
+                </div>
                 <div class="product-info">
                     <p class="name">${product.name}</p>
                     <p class="price">${product.price}</p>
+                    <button class="btn-hover-black-transparent">
+                        <i class="ti-shopping-cart"></i>
+                    </button>
                 </div>
             `;
             productList.appendChild(productDiv);
