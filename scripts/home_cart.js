@@ -5,7 +5,6 @@ let cartLength = 0;
 document.querySelectorAll('.add-to-cart').forEach((btn) => {
     btn.addEventListener('click', (event) => {
         const productDiv = event.target.closest('.product');
-        console.log(productDiv);
         const productName = productDiv.querySelector('.name').innerText;
         const productPrice = currencyToNumber(productDiv.querySelector('.price').innerText);
         let item = {
