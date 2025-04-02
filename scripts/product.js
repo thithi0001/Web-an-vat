@@ -41,7 +41,6 @@ document.querySelectorAll('.section').forEach((section, index) => {
             productList.appendChild(productDiv);
         });
 
-        
         updateProductDisplay();
     }
 
@@ -67,7 +66,7 @@ document.querySelectorAll('.section').forEach((section, index) => {
         tailIndex = headIndex + k - 1;
         updateProductDisplay();
     });
-
+    
     nextBtn.addEventListener('click', () => {
         if (tailIndex < products.length - 1) {
             headIndex++;
