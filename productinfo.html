@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin sản phẩm</title>
+    <link rel="stylesheet" href="./assets/css/productinfo.css">
+</head>
+<body>
+    <div class="product-container">
+        <h2>THÔNG TIN SẢN PHẨM</h2>
+        <div class="product-content">
+            <div class="product-image-container">
+                <img id="product-image" src="" alt="Bánh tráng phơi sương">
+            </div>
+            <div class="product-info">
+                <h3 id="product-name">Bánh tráng phơi sương</h3>
+                <p id="product-price">20.000₫</p>
+                <div class="weight-selector">
+                    <div id="selected-weight-display">Chọn khối lượng</div>
+                    <ul id="weight-options"></ul>
+                </div>
+                <div class="quantity-control">
+                    <button id="decrease">-</button>
+                    <span id="quantity" contenteditable="true">0</span>
+                    <button id="increase">+</button>
+                </div>
+                <button id="add-to-cart">
+                    <img src="./assets/img/cart-icon.png" alt="Giỏ hàng" class="cart-icon">
+                    Thêm vào giỏ hàng
+                </button>                
+            </div>
+        </div>
+        <p class="description-title">Mô tả:</p>
+        <p id="product-description">Bánh tráng phơi sương mềm dẻo với bơ béo ngậy và hành phi thơm lừng.</p>
+
+        <table class="details-table">
+            <thead>
+                <tr>
+                    <th>Thông tin</th>
+                    <th>Chi tiết</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script src="./scripts/productinfo.js"></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+/* Reset some default browser styles */
+body, h1, h3, p, ul, li, table {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1;
+    background-color: #bb8585; /* nền bên ngoài */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 20px;
+}
+
+.product-container {
+    background-color: #ffb3b3; /*màu nền thông tin sản phẩm*/
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 400px;
+    max-width: 95%;
+}
+
+h2 {
+    color: #f0f0f0; /* Primary color */
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.product-content {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    align-items: flex-start; /* Thay đổi để căn chỉnh từ đầu */
+}
+
+.product-image-container {
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+#product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.product-info {
+    flex-grow: 1;
+}
+
+#product-name {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+#product-price {
+    color: #f0f0f0;
+    font-weight: bold;
+    margin-bottom: 5px; /* Giảm margin để gần với weight */
+}
+
+.weight-selector {
+    position: relative; /* Để định vị dropdown bên trong */
+    margin-bottom: 15px;
+}
+
+#selected-weight-display {
+    background-color: #ffdede;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    cursor: pointer; /* Cho biết có thể nhấp vào */
+    width: 100px; /* Kích thước giống "Bịch 100g" */
+    text-align: center;
+}
+
+#weight-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffdede;
+    border: 1px solid #ff0d0d;
+    border-radius: 4px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 10;
+    display: none; /* Ẩn theo mặc định */
+    width: 100px; /* Kích thước giống "Bịch 100g" */
+}
+
+#weight-options li {
+    padding: 5px 10px;
+    font-size: 0.9em;
+    color: #000;
+    cursor: pointer;
+}
+
+#weight-options li:hover {
+    background-color: #ffdede;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.quantity-control button {
+    background-color: #ffdede;/*màu nền nút*/
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#quantity {
+    font-size: 1em;
+    font-weight: bold;
+    width: 40px;
+    text-align: center;
+    border: 1px solid #ff0d0d;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+#add-to-cart {
+    background-color: #ff0d0d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex; /* Giúp icon và chữ nằm ngang */
+    align-items: center; /* Căn giữa icon và chữ */
+    justify-content: center; /* Căn giữa nội dung trong nút */
+    gap: 8px; /* Tạo khoảng cách giữa icon và chữ */
+}
+
+.cart-icon {
+    width: 40px; /* Điều chỉnh kích thước icon */
+    height: 40px;
+}
+
+#add-to-cart:hover {
+    background-color: #ff0d0d;
+}
+
+.description-title {
+    font-weight: bold;
+    margin-top: 20px;
+    color: #000;
+    font-size: 1em;
+}
+
+#product-description {
+    color: #000;
+    line-height: 1.6;
+    font-size: 0.95em;
+}
+
+.details-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.details-table th, .details-table td {
+    border: 1px solid #ffb3b3;
+    background-color: #ffdede;
+    padding: 8px;
+    text-align: left;
+    font-size: 0.9em;
+}
+
+.details-table th {
+    background-color: #ff4343;/* màu nền tiêu đề bảng thông tin */
+    font-weight: bold;
+}
+
