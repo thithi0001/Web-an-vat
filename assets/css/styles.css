@@ -12,7 +12,9 @@ a {
   color: black;
   text-decoration: none;
 }
-
+.home-icon{
+  user-select: none;
+}
 .container {
   max-width: 800px;
   margin: auto;
@@ -114,6 +116,12 @@ button:hover {
 
 .checkbox-wrapper input[type="checkbox"] {
   margin-bottom: 5px; /* Khoảng cách giữa checkbox và label */
+}
+
+.image{
+  width: 55px;
+  height: 55px;
+  content: url(../img/banh-trang-phoi-suong.png);
 }
 /* .checkbox-container {
   display: flex;
