@@ -616,3 +616,23 @@ footer li {
 }
 
 
+.info-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba(0, 0, 0, 0.5); /* Màu nền bán trong suốt */
+    color: white;
+    font-size: 16px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.info-icon:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Tối màu nền khi hover */
+}
+

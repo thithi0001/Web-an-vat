@@ -210,3 +210,7 @@ h2 {
     font-weight: bold;
 }
 
+.home-icon {
+    font-size: 30px; /* Điều chỉnh kích thước của biểu tượng */
+    color: black; /* Thay đổi màu sắc của biểu tượng (bạn có thể thay bằng màu khác) */
+}
