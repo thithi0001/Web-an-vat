@@ -3,6 +3,7 @@ body {
   background-size: cover; 
   background-repeat: no-repeat;
   background-position: center; 
+  background-attachment: fixed;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 20px;
@@ -34,7 +35,7 @@ table {
   margin: 20px 0;
 }
 
-th, td {
+td {
   padding: 10px;
   text-align: left;
   border-bottom: 1px solid #ddd;
@@ -44,8 +45,10 @@ th, td {
   text-align: right;
 }
 
-.text-center{
+th{
+  padding: 10px;
   text-align: center;
+  border-bottom: 1px solid #ddd;
 }
 
 input[type="number"] {
@@ -108,19 +111,12 @@ button:hover {
 .small-icon{
   font-size: 16px;
 }
-.checkbox-wrapper {
-  display: flex;
-  flex-direction: column; /* Sắp xếp theo chiều dọc */
-  align-items: center; /* Căn giữa theo chiều ngang */
-}
-
-.checkbox-wrapper input[type="checkbox"] {
-  margin-bottom: 5px; /* Khoảng cách giữa checkbox và label */
-}
 
 .image{
-  width: 55px;
-  height: 55px;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto; 
+  object-fit: cover;
   content: url(../img/banh-trang-phoi-suong.png);
 }
 /* .checkbox-container {

@@ -1,8 +1,5 @@
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
-if (cart.length === 0) {
-    console.log("Giỏ hàng rỗng!");
-} else {
-    console.log("Giỏ hàng hiện tại:", cart);
+if (cart.length !== 0) {
     displayCart(); 
 }
 function displayCart(){
@@ -11,23 +8,24 @@ function displayCart(){
     cart.forEach((item, index) => {
         let row =  `
             <tr>
-                <td class="text-center"><input type="checkbox" class="item-checkbox"></td>
-                        <div class="checkbox"></div></td>
                 <td class="image"></td>
                 <td>${item.name}</td>
                 <td class="price" >${item.price.toLocaleString("vi-VN")} VNĐ</td>
                 <td>
-                    <input type="number" value=${item.quantity} min="1" class="quantity" oninput="updateTotal(this)">
+                    <input type="number" value=${item.quantity} min="1" class="quantity" oninput="updateTotal(this,${index})" onblur="validateInput(this, ${index})">
                 </td>
                 <td class="total">10.000 VNĐ</td>
-                <td><button class="delete-btn" onclick="deleteRow(this)" >Xóa</button></td>
+                <td><button class="delete-btn" onclick="deleteItem(${index})" >Xóa</button></td>
             </tr>
         `;
         cartTable.innerHTML += row;
     });
 }
-function deleteItem(button) {
-    removeFromCart(index); 
-    deleteRow(this); 
+function deleteItem(index) {
+    if (index >= 0 && index < cart.length) { 
+        cart.splice(index, 1); 
+        localStorage.setItem("cart", JSON.stringify(cart)); 
+        displayCart();
+    }
 }
 document.addEventListener("DOMContentLoaded", displayCart);
