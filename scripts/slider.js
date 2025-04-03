@@ -18,5 +18,5 @@ function changeSlide(direction) {
     slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
 }
 
-// Tự động chuyển slide mỗi 3 giây
+// Tự động chuyển slide
 setInterval(() => changeSlide(1), 6000);

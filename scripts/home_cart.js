@@ -1,6 +1,6 @@
 const cartList = document.querySelector('.cart-list');
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
-let cartLength = 0;
+updateCartList();
 
 document.querySelectorAll('.add-to-cart').forEach((btn) => {
     btn.addEventListener('click', (event) => {
@@ -13,35 +13,27 @@ document.querySelectorAll('.add-to-cart').forEach((btn) => {
             quantity: 1,
             total: 0
         };
-        
         item.total = item.price * item.quantity;
 
-        cart.push(item);
-        localStorage.setItem('cart', JSON.stringify(cart));
-        const itemDiv = renderItem(item);
+        // Kiểm tra sản phẩm đã có trong giỏ hàng hay chưa
+        // Chưa thì thêm vào
+        // Đã có thì tăng số lượng
+        let index = cart.findIndex(e => e.name === productName);
+        if (index != -1) {
+            cart[index].quantity++;
+            cart[index].total += item.total;
+            updateCartList();
+        } else {
+            cart.push(item);
 
-        const plusBtn = itemDiv.querySelector('.plus-btn');
-        const minusBtn = itemDiv.querySelector('.minus-btn');
+            const itemDiv = renderItem(item);
 
-        plusBtn.addEventListener('click', () => {
-            const q1 = itemDiv.querySelector('.item-quantity').querySelector('.quantity1');
-            let quantity = parseInt(q1.innerText) + 1;
-            q1.innerText = quantity;
-            updateItemValue(itemDiv, quantity);
-        });
+            cartList.appendChild(itemDiv);
+        }
         
-        minusBtn.addEventListener('click', () => {
-            const q1 = itemDiv.querySelector('.item-quantity').querySelector('.quantity1');
-            let quantity = parseInt(q1.innerText);
-            if (quantity > 1) {
-                quantity--;
-                q1.innerText = quantity;
-                updateItemValue(itemDiv, quantity);
-            }
-        });
-        
-        cartList.appendChild(itemDiv);
         alert(`${productName} đã được thêm vào giỏ hàng!`);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        console.log("after push: ", cart);
     });
 })
 
@@ -53,6 +45,13 @@ function updateItemValue(itemDiv, quantity) {
     const unitPrice = currencyToNumber(cartItemInfo.querySelector('.unit-price').innerText);
     const total = cartItemInfo.querySelector('.total-price');
     total.innerText = formatCurrency(quantity * unitPrice);
+}
+
+function updateCartList() {
+    cartList.innerHTML = '';
+    cart.forEach((item) => {
+        cartList.appendChild(renderItem(item));
+    });
 }
 
 function formatCurrency(value) {
@@ -68,8 +67,6 @@ function renderItem(item) {
     const formattedPrice = formatCurrency(item.price);
     const formattedTotal = formatCurrency(item.total);
     itemDiv.classList.add('cart-item');
-    // itemDiv.setAttribute('data-index', cartLength);
-    cartLength++;
     itemDiv.innerHTML = `
         <div class="item-quantity">
             <button class="plus-btn">+</button>
@@ -88,7 +85,47 @@ function renderItem(item) {
         </div>
         <button class="remove-btn btn-hover-black-transparent">x</button>
     `;
-    // cartList.appendChild(itemDiv);
+
+    const plusBtn = itemDiv.querySelector('.plus-btn');
+    const minusBtn = itemDiv.querySelector('.minus-btn');
+    const removeBtn = itemDiv.querySelector('.remove-btn');
+    const index = cart.findIndex(e => e.name === item.name);
+
+    plusBtn.addEventListener('click', () => {
+        const q1 = itemDiv.querySelector('.item-quantity').querySelector('.quantity1');
+        let quantity = parseInt(q1.innerText) + 1;
+        q1.innerText = quantity;
+        updateItemValue(itemDiv, quantity);
+
+        cart[index].quantity = quantity;
+        cart[index].total = quantity * cart[index].price;
+        localStorage.setItem('cart', JSON.stringify(cart));
+        console.log("after plus: ", cart);
+    });
+    
+    minusBtn.addEventListener('click', () => {
+        const q1 = itemDiv.querySelector('.item-quantity').querySelector('.quantity1');
+        let quantity = parseInt(q1.innerText);
+        if (quantity > 1) {
+            quantity--;
+            q1.innerText = quantity;
+            updateItemValue(itemDiv, quantity);
+
+            cart[index].quantity = quantity;
+            cart[index].total = quantity * cart[index].price;
+            localStorage.setItem('cart', JSON.stringify(cart));
+            console.log("after minus: ", cart);
+        }
+    });
+    
+    removeBtn.addEventListener('click', () => {
+        cartList.removeChild(itemDiv);
+        if (index != -1) {
+            cart.splice(index, 1);
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+        console.log("after remove: ", cart);
+    });
     return itemDiv;
 };
 
