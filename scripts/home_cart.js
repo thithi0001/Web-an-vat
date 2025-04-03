@@ -78,7 +78,6 @@ function renderItem(item) {
             <p class="item-name">${item.name}</p>
             <div class="calculate">
                 <span class="unit-price">${formattedPrice}</span>
-                x 
                 <span class="quantity2">${item.quantity}</span>
             </div>
             <p class="total-price">${formattedTotal}</p>
