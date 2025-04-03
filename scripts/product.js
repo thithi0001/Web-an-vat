@@ -1,5 +1,5 @@
 const productCounts = [5, 10, 7, 20];
-const k = 4; // Số sản phẩm hiển thị cùng một lúc
+const k = 4; // Số sản phẩm hiển thị cùng lúc
 
 document.querySelectorAll('.section').forEach((section, index) => {
     const productList = section.querySelector('.product-list');
