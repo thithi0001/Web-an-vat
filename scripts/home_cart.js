@@ -11,9 +11,8 @@ document.querySelectorAll('.add-to-cart').forEach((btn) => {
             name: productName,
             price: productPrice,
             quantity: 1,
-            total: 0
+            total: productPrice
         };
-        item.total = item.price * item.quantity;
 
         // Kiểm tra sản phẩm đã có trong giỏ hàng hay chưa
         // Chưa thì thêm vào
