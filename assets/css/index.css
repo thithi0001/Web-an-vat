@@ -6,22 +6,23 @@
 
 :root {
     /* bgc = background-color */
-    --header-bgc: #FF0D0D;
-    --nav-bar-bgc: #FF6363;
-    --nav-item-hover-bgc: #C83838;
-    --nav-item-focus-bgc: #CA0000;
-    --section-bgc: #FFB3B3;
-    --body-bgc: #FFDEDE;
-    --footer-bgc: #E13C3C;
-    --slider-bgc: #FFB3B3;
-    --section-content-container-bgc: #FFB3B3;
-    --product-bgc: #FE3E3E;
-    --logo-bgc: yellow;
-    --slider-btn-bgc: rgb(255, 0, 150);
-    --section-btn-bgc: rgba(255, 0, 150, 0.5);
-    --search-bar-focus-bgc: blueviolet;
-    --invisible-black: rgba(0, 0, 0, 0);
-    --hover-btn: rgba(0, 0, 0, 0.1);
+    --header-bgc: #0c0000; /*đầu*/
+    --nav-bar-bgc: #919090; /*menu*/
+    --nav-item-hover-bgc: #464444; /*hover menu*/
+    --nav-item-focus-bgc: #0c0000; /*click menu*/
+    --section-bgc: #fd3d02;
+    --body-bgc: #ffffff; /*nền product*/
+    --footer-bgc: #070000; 
+    --slider-bgc: #ffffff; /*nền đầu*/
+    --nav-bar-bgc: #919090; /*menu*/
+    --section-content-container-bgc:  #d8d8d8; /*background khung product*/
+    --product-bgc: #ffffff; /*nền product*/
+    --logo-bgc: #ffffff;
+    --slider-btn-bgc: rgb(0, 0, 0); /*nút <> ở đầu*/
+    --section-btn-bgc: rgb(0, 0, 0); /*nút <> ở các product*/
+    --search-bar-focus-bgc: rgb(150, 148, 148); /*viền khung tìm kiếm*/
+    --invisible-black: rgb(40, 238, 1); /*giỏ hàng*/
+    --hover-btn: rgb(125, 233, 103); /*hover giỏ hàng*/
 }
 
 .hover-scale:hover {
