@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Hiển thị thông tin sản phẩm ban đầu
     productNameElement.textContent = productData.name;
-    productPriceElement.textContent = productData.price.toLocaleString() + "₫";
+    productPriceElement.textContent = productData.price.toLocaleString();
     productImageElement.src = productData.image;
     productDescriptionElement.textContent = productData.description;
     quantityInput.value = 0; // Khởi tạo số lượng mặc định là 0
@@ -109,10 +109,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Nếu sản phẩm chưa có, thêm mới vào giỏ hàng
                 cart.push({
                     name: productData.name,
-                    price: productData.price,
+                    price: parseInt(productData.price.replaceAll(".","")),
                     weight: selectedWeight,
                     quantity: quantity,
-                    image: productData.image
+                    image: productData.image,
+                    total: parseInt(productData.price.replaceAll(".","")) * quantity
                 });
             }
     

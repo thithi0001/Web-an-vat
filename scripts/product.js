@@ -51,8 +51,8 @@ document.querySelectorAll('.section').forEach((section, index) => {
                 </div>
                 <div class="product-info">
                     <p class="name">${product.name}</p>
-                    <p class="price">${product.price}</p>
-                    <button class="btn-hover-black-transparent">
+                    <p class="price">${product.price} VNĐ</p>
+                    <button class="btn-hover-black-transparent add-to-cart">
                         <i class="ti-shopping-cart"></i>
                     </button>
                 </div>
