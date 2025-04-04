@@ -93,6 +93,7 @@ header {
     height: 50px;
     margin: 0 auto;
     width: 90%;
+    color: white;
 }
 
 .logo {
@@ -128,7 +129,6 @@ header {
     width: 50px;
     height: 50px;
     font-size: 30px;
-    /* background-color: white; */
     color: white;
 }
 
@@ -161,7 +161,6 @@ nav {
     text-align: center;
     padding: 12px 24px;
     color: white;
-    /* background-color: black; */
 }
 
 .nav-item:hover {
@@ -169,7 +168,6 @@ nav {
 }
 
 .nav-item:focus {
-    /* color: ; */
     background-color: var(--nav-item-focus-bgc);
 }
 
@@ -223,8 +221,6 @@ nav {
     height: 40px;
     font-size: 26px;
     border-radius: 50%;
-    /* color: rgb(255, 216, 216); */
-    /* background-color: rgb(255, 75, 75); */
 }
 
 .close-cart-btn {
@@ -378,6 +374,7 @@ nav {
     width: 40px;
     height: 40px;
     font-size: 20px;
+    color: white;
     background-color: var(--slider-btn-bgc);
 }
 
@@ -412,7 +409,6 @@ nav {
     text-align: left;
     position: relative;
     top: 10px;
-    /* border: 1px solid black; */
 }
 
 .section-btn-container {
@@ -427,19 +423,9 @@ nav {
     height: 40px;
     font-size: 20px;
     transition: 0.2s;
+    color: white;
     background-color: var(--section-btn-bgc);
 }
-
-/* .test {
-    width: 86%;
-    height: 70%;
-    overflow: hidden;
-}
-
-.test .product-list {
-    width: 100%;
-    height: 100%;
-} */
 
 #product {}
 .product-list {
@@ -451,8 +437,6 @@ nav {
     height: 70%;
     padding: 0 10px;
     transition: transform 0.6s ease-in-out;
-    /* column-gap: 30px; */
-    /* border: 1px solid black; */
 }
 
 .product {
@@ -469,7 +453,6 @@ nav {
 }
 
 .product:hover {
-    /* transform: translateY(-20px); */
     transition: 0.3s ease-out;
 }
 
@@ -477,7 +460,6 @@ nav {
     width: 100%;
     height: 100%;
     transition: 0.3s;
-    /* border-radius: 5px; */
     content: url(../img/banh-trang-phoi-suong.png);
 }
 
@@ -508,7 +490,6 @@ nav {
     grid-area: price;
     font-size: 16px;
     line-height: 36px;
-    color: white;
     text-align: left;
     text-indent: 10px;
 }
@@ -518,7 +499,7 @@ nav {
     width: 40px;
     height: 40px;
     font-size: 24px;
-    /* padding-bottom: 10px; */
+    justify-self: end;
 }
 
 #footer {}

@@ -14,7 +14,6 @@ document.querySelectorAll('.section').forEach((section, index) => {
         for (let i = 0; i < n; i++) {
             products.push({
                 name: `Bánh tráng phơi sương ${i}`,
-                // name: `Bánh tráng phơi sương`,
                 price: '10.000đ',
                 weights: [
                     { value: "100g", display: "Bịch 100g" },
@@ -82,16 +81,13 @@ document.querySelectorAll('.section').forEach((section, index) => {
             details: product.details || {}
         };
         
-        // Lưu thông tin sản phẩm vào localStorage
-            localStorage.setItem('product', JSON.stringify(productData));
-        // Chuyển trang đến productinfo.html
-        window.location.href = 'productinfo.html'; // Đây là dòng chuyển trang
+        localStorage.setItem('product', JSON.stringify(productData));
+        window.location.href = 'productinfo.html';
     }
     
     
 
     function updateProductDisplay() {
-        const offset = headIndex * (100 / k); // Tính toán offset để chuyển đổi
         for (let i = 0; i < products.length; i++) {
             const productDiv = productList.children[i];
             if (headIndex <= i && i <= tailIndex) {
@@ -100,6 +96,7 @@ document.querySelectorAll('.section').forEach((section, index) => {
                 productDiv.classList.add('hid');
             }
         }
+        // const offset = headIndex * (100 / k); // Tính toán offset để chuyển đổi
         // productList.style.transform = `translateX(-${offset}%)`;
     }
 
@@ -123,7 +120,5 @@ document.querySelectorAll('.section').forEach((section, index) => {
         updateProductDisplay();
     });
 
-    // Gọi hàm để tạo sản phẩm
-    createProducts(productCounts[index]); // Thay đổi số lượng sản phẩm ở đây
-    // console.log("product count = ", productCounts[index]);
+    createProducts(productCounts[index]);
 });
