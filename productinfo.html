@@ -4,29 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thông tin sản phẩm</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/productinfo.css">
 </head>
 <body>
     <div class="product-container">
+        <div>
+            <a href="index.html" aria-label="Trang chủ">
+              <i class="material-icons home-icon">home</i>
+            </a>
+        </div>
         <h2>THÔNG TIN SẢN PHẨM</h2>
         <div class="product-content">
             <div class="product-image-container">
-                <img id="product-image" src="" alt="Bánh tráng phơi sương">
+                <img id="product-image" src="" alt="Bánh tráng phơi sương" aria-describedby="product-description">
             </div>
             <div class="product-info">
                 <h3 id="product-name">Bánh tráng phơi sương</h3>
                 <p id="product-price">20.000₫</p>
                 <div class="weight-selector">
-                    <div id="selected-weight-display">Chọn khối lượng</div>
-                    <ul id="weight-options"></ul>
+                    <div id="selected-weight-display" aria-label="Chọn khối lượng">Chọn khối lượng</div>
+                    <ul id="weight-options" aria-hidden="true"></ul>
                 </div>
                 <div class="quantity-control">
                     <button id="decrease">-</button>
                     <span id="quantity" contenteditable="true">0</span>
                     <button id="increase">+</button>
                 </div>
-                <button id="add-to-cart">
-                    <img src="./assets/img/cart-icon.png" alt="Giỏ hàng" class="cart-icon">
+                <button id="add-to-cart" aria-label="Thêm vào giỏ hàng">
+                    <img src="./assets/img/cart-icon.png" alt="Thêm vào giỏ hàng" class="cart-icon">
                     Thêm vào giỏ hàng
                 </button>                
             </div>

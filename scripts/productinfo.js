@@ -1,27 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
     // **Giả lập dữ liệu sản phẩm trực tiếp trong file JavaScript**
-    const productData = {
-        name: "Bánh tráng phơi sương",
-        price: 20000,
-        weights: [
-            { value: "100g", display: "Bịch 100g" },
-            { value: "200g", display: "Bịch 200g" },
-            { value: "500g", display: "Hộp 500g" }
-        ],
-        image: "./assets/img/banh-trang-phoi-suong.png", // Đường dẫn ảnh sản phẩm
-        description: "Bánh tráng phơi sương mềm dẻo với bơ béo ngậy và hành phi thơm lừng.", // Mô tả sản phẩm
-        details: {
-            "Loại": "Bánh tráng phơi sương",
-            "Năng lượng": "250 kcal/100g",
-            "Lưu ý": "Không bảo quản nơi ẩm ướt",
-            "Phù hợp": "Mọi lứa tuổi",
-            "Hạn sử dụng": "6 tháng",
-            "Thương hiệu": "Ăn Vặt 3 Miền",
-            "Nơi sản xuất": "Việt Nam",
-            "Bảo quản": "Nơi khô ráo, thoáng mát",
-            "Thành phần": "Bánh tráng, bơ, hành phi, muối, ớt"
-        }
-    };
+    const productData = JSON.parse(localStorage.getItem('product'));
+    
+   // if (!productData) {
+   //     window.location.href = "index.html"; // Quay về trang chủ nếu không có thông tin sản phẩm
+    //}
 
     // Các phần tử HTML cần cập nhật
     const quantityInput = document.getElementById("quantity");
@@ -40,11 +23,12 @@ document.addEventListener("DOMContentLoaded", function () {
     productNameElement.textContent = productData.name;
     productPriceElement.textContent = productData.price.toLocaleString() + "₫";
     productImageElement.src = productData.image;
-    productDescriptionElement.textContent = productData.description; // Hiển thị mô tả sản phẩm từ dữ liệu JS
-    quantityInput.textContent = 0; // Khởi tạo số lượng mặc định là 0
+    productDescriptionElement.textContent = productData.description;
+    quantityInput.value = 0; // Khởi tạo số lượng mặc định là 0
     selectedWeightDisplay.textContent = productData.weights[0].display;
 
     // Thêm các tùy chọn weight vào danh sách
+    let selectedWeight = productData.weights[0].value; // Định nghĩa biến selectedWeight
     productData.weights.forEach(weightOption => {
         const li = document.createElement("li");
         li.textContent = weightOption.display;
@@ -109,18 +93,32 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
     });
 
+
     // Xử lý thêm sản phẩm vào giỏ hàng
     cartButton.addEventListener("click", function () {
         if (quantity > 0) {
             let cart = JSON.parse(localStorage.getItem("cart")) || [];
-            cart.push({
-                name: productData.name,
-                price: productData.price,
-                weight: productData.weights.find(w => w.value === selectedWeight).display,
-                quantity: quantity,
-                image: productData.image
-            });
+    
+            // Kiểm tra nếu sản phẩm đã có trong giỏ hàng
+            let existingItemIndex = cart.findIndex(item => item.name === productData.name && item.weight === selectedWeight);
+    
+            if (existingItemIndex !== -1) {
+                // Nếu sản phẩm đã có, chỉ cần cập nhật số lượng
+                cart[existingItemIndex].quantity += quantity;
+            } else {
+                // Nếu sản phẩm chưa có, thêm mới vào giỏ hàng
+                cart.push({
+                    name: productData.name,
+                    price: productData.price,
+                    weight: selectedWeight,
+                    quantity: quantity,
+                    image: productData.image
+                });
+            }
+    
+            // Lưu lại giỏ hàng vào localStorage
             localStorage.setItem("cart", JSON.stringify(cart));
+    
             alert("Đã thêm vào giỏ hàng!");
         } else {
             alert("Vui lòng chọn số lượng sản phẩm!");
