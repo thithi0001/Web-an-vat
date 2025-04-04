@@ -11,7 +11,7 @@ body, h1, h3, p, ul, li, table {
 body {
     font-family: Arial, sans-serif;
     line-height: 1;
-    background-color: #bb8585; /* nền bên ngoài */
+    background-color: #777777; /* nền bên ngoài */
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -20,7 +20,7 @@ body {
 }
 
 .product-container {
-    background-color: #ffb3b3; /*màu nền thông tin sản phẩm*/
+    background-color: #ffffff; /*màu nền thông tin sản phẩm*/
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -29,7 +29,7 @@ body {
 }
 
 h2 {
-    color: #f0f0f0; /* Primary color */
+    color: #000000; /* Primary color */
     text-align: center;
     font-weight: bold;
     margin-bottom: 20px;
@@ -48,7 +48,7 @@ h2 {
     height: 120px;
     border-radius: 8px;
     overflow: hidden;
-    border: 1px solid #ddd;
+    border: 1px solid #ffffff;
 }
 
 #product-image {
@@ -65,12 +65,12 @@ h2 {
 #product-name {
     font-size: 1.1em;
     font-weight: bold;
-    color: #333;
+    color: #000000;
     margin-bottom: 5px;
 }
 
 #product-price {
-    color: #f0f0f0;
+    color: #1bc005;
     font-weight: bold;
     margin-bottom: 5px; /* Giảm margin để gần với weight */
 }
@@ -81,7 +81,7 @@ h2 {
 }
 
 #selected-weight-display {
-    background-color: #ffdede;
+    background-color: #dddddd;
     color: #000;
     padding: 5px 10px;
     border-radius: 4px;
@@ -95,8 +95,8 @@ h2 {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #ffdede;
-    border: 1px solid #ff0d0d;
+    background-color: #dddddd;
+    border: 1px solid #000000;
     border-radius: 4px;
     list-style: none;
     padding: 0;
@@ -114,7 +114,7 @@ h2 {
 }
 
 #weight-options li:hover {
-    background-color: #ffdede;
+    background-color: #919090;
 }
 
 .quantity-control {
@@ -125,8 +125,9 @@ h2 {
 }
 
 .quantity-control button {
-    background-color: #ffdede;/*màu nền nút*/
+    background-color: #1bc005;/*màu nền nút*/
     border: none;
+    font-weight: bold;
     border-radius: 4px;
     padding: 5px 10px;
     cursor: pointer;
@@ -143,13 +144,13 @@ h2 {
     font-weight: bold;
     width: 40px;
     text-align: center;
-    border: 1px solid #ff0d0d;
+    border: 1px solid #000000;
     border-radius: 4px;
     padding: 5px;
 }
 
 #add-to-cart {
-    background-color: #ff0d0d;
+    background-color: #1bc005;
     color: white;
     border: none;
     border-radius: 4px;
@@ -172,7 +173,7 @@ h2 {
 }
 
 #add-to-cart:hover {
-    background-color: #ff0d0d;
+    background-color: #61cf53;
 }
 
 .description-title {
@@ -198,15 +199,16 @@ h2 {
 }
 
 .details-table th, .details-table td {
-    border: 1px solid #ffb3b3;
-    background-color: #ffdede;
+    border: 1px solid #000000;
+    background-color: #ffffff;
     padding: 8px;
     text-align: left;
     font-size: 0.9em;
 }
 
 .details-table th {
-    background-color: #ff4343;/* màu nền tiêu đề bảng thông tin */
+    background-color: #000000;/* màu nền tiêu đề bảng thông tin */
+    color: #ffffff;
     font-weight: bold;
 }
 
