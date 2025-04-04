@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Hiển thị thông tin sản phẩm ban đầu
     productNameElement.textContent = productData.name;
-    productPriceElement.textContent = productData.price.toLocaleString();
+    productPriceElement.textContent = productData.price.toLocaleString() + " VNĐ";
     productImageElement.src = productData.image;
     productDescriptionElement.textContent = productData.description;
     quantityInput.value = 0; // Khởi tạo số lượng mặc định là 0

@@ -14,7 +14,7 @@ document.querySelectorAll('.section').forEach((section, index) => {
         for (let i = 0; i < n; i++) {
             products.push({
                 name: `Bánh tráng phơi sương ${i}`,
-                price: '10.000đ',
+                price: '10.000',
                 weights: [
                     { value: "100g", display: "Bịch 100g" },
                     { value: "200g", display: "Bịch 200g" },
