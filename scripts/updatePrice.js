@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    updateGrandTotal(); // Cập nhật tổng tiền khi trang load
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    // Hàm cập nhật tổng tiền của từng hàng
+updateGrandTotal();
     function updateTotal(input, index) {
         let row = input.closest("tr"); 
         let price = parseInt(row.querySelector(".price").innerText.replace(/\D/g, '')) || 0; 
@@ -14,10 +13,9 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
         cart[index].quantity = quantity;
         cart[index].total = cart[index].price * quantity;
         localStorage.setItem("cart", JSON.stringify(cart));
-        updateGrandTotal(); // Cập nhật tổng tiền của giỏ hàng
+        updateGrandTotal(); 
     }
 
-    // Hàm cập nhật tổng giá trị giỏ hàng
     function updateGrandTotal() {
         let grandTotal = 0;
         document.querySelectorAll(".total").forEach(totalCell => {
@@ -39,26 +37,28 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
         row.remove(); 
         updateGrandTotal(); 
     }
-
+    function validateInput(input, index) {
+        let quantity = parseInt(input.value);
+    
+        if (isNaN(quantity) || quantity < 1) {
+            quantity = 1; 
+            input.value = 1;
+        }
+        else{
+            updateTotal();
+        }
+        cart[index].quantity = quantity;
+        cart[index].total = cart[index].price * quantity;
+        
+        localStorage.setItem("cart", JSON.stringify(cart));
+        displayCart();
+    }
 
     window.updateTotal = updateTotal;
     window.updateGrandTotal = updateGrandTotal;
     window.deleteRow = deleteRow;
+    window.validateInput = validateInput; 
+
+    displayCart();
 });
 
-function validateInput(input, index) {
-    let quantity = parseInt(input.value);
-
-    if (isNaN(quantity) || quantity < 1) {
-        quantity = 1; 
-        input.value = 1;
-    }
-    else{
-        updateTotal();
-    }
-    cart[index].quantity = quantity;
-    cart[index].total = cart[index].price * quantity;
-    
-    localStorage.setItem("cart", JSON.stringify(cart));
-    displayCart();
-}
